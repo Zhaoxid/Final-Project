@@ -7,3 +7,7 @@ class data_process:
         print("Processing data")
         self.df = pd.read_csv('BlackFriday.csv')
         self.df.describe()
+        # Do processing here
+        
+        
+        
