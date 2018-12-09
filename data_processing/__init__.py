@@ -69,11 +69,10 @@ class data_process:
         (occupation == 19) or (occupation == 11) or
         (occupation == 15) or (occupation ==  5) or
         (occupation == 10)):
-            return 2
+            return 1
         elif ((occupation == 3) or (occupation == 6) or
         (occupation == 16) or (occupation == 2) or
-        (occupation == 14) or (occupation == 12) or
-        (occupation == 20) or (occupation == 17)):
+        (occupation == 14) or (occupation == 12)):
             return 1
         else:
             return 0
