@@ -33,21 +33,21 @@ def predict(X_train, y_train, X_test, y_test):
 train_set=[]
 test_set=[]
 
-kfold_split(data, train_set, test_set, 10)
-
-scores = []
-weights = []
-for (train, test) in zip(train_set, test_set):
-    X_train = feature_label_split(train)[0]
-    y_train = feature_label_split(train)[1]
-    X_test = feature_label_split(test)[0]
-    y_test = feature_label_split(test)[1]
-    
-    score = predict(X_train, y_train, X_test, y_test)[0]
-    weight = predict(X_train, y_train, X_test, y_test)[1]
-    
-    scores.append(score)
-    weights.append(weight)
-    
-print(scores)
-print(weights)
+# kfold_split(data, train_set, test_set, 10)
+# 
+# scores = []
+# weights = []
+# for (train, test) in zip(train_set, test_set):
+#     X_train = feature_label_split(train)[0]
+#     y_train = feature_label_split(train)[1]
+#     X_test = feature_label_split(test)[0]
+#     y_test = feature_label_split(test)[1]
+#     
+#     score = predict(X_train, y_train, X_test, y_test)[0]
+#     weight = predict(X_train, y_train, X_test, y_test)[1]
+#     
+#     scores.append(score)
+#     weights.append(weight)
+#     
+# print(scores)
+# print(weights)
