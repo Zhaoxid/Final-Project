@@ -17,7 +17,7 @@ def kfold_split(data, kf_train, kf_test, k):
 # get feature X and label y from the dataset
 def feature_label_split(data):   
     X = data[['Gender','Age','Occupation','City_Category','Stay_In_Current_City_Years',
-              'Marital_Status','rProduct_Category_1','Product_Category_2','Product_Category_3']]
+              'Marital_Status','Product_Category_1','Product_Category_2','Product_Category_3']]
     y = data['Purchase']      
     return (X, y)
 
@@ -37,7 +37,7 @@ kfold_split(data, train_set, test_set, 10)
 
 scores = []
 weights = []
-for train, test in train_set, test_set:
+for (train, test) in zip(train_set, test_set):
     X_train = feature_label_split(train)[0]
     y_train = feature_label_split(train)[1]
     X_test = feature_label_split(test)[0]
