@@ -115,13 +115,15 @@ class data_process:
             return int(stay)
       
     def map_purchase(self, purchase):
-        if purchase <= 8000:
+        if purchase <= 4000:
             return 1
-        elif purchase > 8000 and purchase <= 10000:
+        elif purchase > 4000 and purchase <= 8000:
             return 2
-        elif purchase > 10000 and purchase <= 18000:
+        elif purchase > 8000 and purchase <= 12000:
             return 3
-        elif purchase > 18000 and purchase <= 20000:
+        elif purchase > 12000 and purchase <= 16000:
             return 4
-        else:
+        elif purchase > 16000 and purchase <= 20000:
             return 5
+        else:
+            return 6
