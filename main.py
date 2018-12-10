@@ -23,7 +23,7 @@ def feature_label_split(data):
 
 # fit model and get accuracy and weights assigned to each feature            
 def predict(X_train, y_train, X_test, y_test):    
-    clf = LinearSVC(C=1.0, random_state=0)
+    clf = LinearSVC(C=0.1, random_state=0, dual=False)
     clf.fit(X_train, y_train)   
     score = clf.score(X_test, y_test)
     weight = clf.coef_   
