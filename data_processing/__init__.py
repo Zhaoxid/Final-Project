@@ -58,7 +58,8 @@ class data_process:
         self.df['Age'] = self.df['Age'].apply(self.map_age)
         self.df['Occupation'] = self.df['Occupation'].apply(self.map_occupation)
         self.df['City_Category'] = self.df['City_Category'].apply(self.map_city_categories)
-        self.df['Stay_In_Current_City_Years'] = self.df['Stay_In_Current_City_Years'].apply(self.map_stay)    
+        self.df['Stay_In_Current_City_Years'] = self.df['Stay_In_Current_City_Years'].apply(self.map_stay) 
+        self.df['Purchase'] = self.df['Purchase'].apply(self.map_purchase)
         
         cols = ['User_ID','Product_ID']
         self.df.drop(cols, inplace = True, axis =1)
@@ -112,3 +113,17 @@ class data_process:
             return 4
         else:
             return int(stay)
+      
+    def map_purchase(self, purchase):
+        if purchase <= 4000:
+            return 1
+        elif purchase > 4000 and purchase <= 8000:
+            return 2
+        elif purchase > 8000 and purchase <= 12000:
+            return 3
+        elif purchase > 12000 and purchase <= 16000:
+            return 4
+        elif purchase > 16000 and purchase <= 20000:
+            return 5
+        else:
+            return 6
