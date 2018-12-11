@@ -43,11 +43,10 @@ class data_process:
         plt.tight_layout()
         plt.legend()
 
-
         fig1, ax1 = plt.subplots(figsize=(12,7))
         self.df['Occupation'].value_counts().sort_values().plot('bar')
         
-        plt.show()
+#         plt.show()
 
 #         self.df['combined_G_M'] = self.df.apply(lambda x:'%s - %s' % (x['Gender'],x['Marital_Status']),axis=1)
 #         sns.countplot(self.df['Age'],hue=self.df['combined_G_M'])

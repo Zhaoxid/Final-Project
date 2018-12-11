@@ -16,9 +16,9 @@ def kfold_split(data, kf_train, kf_test, k):
             
 # get feature X and label y from the dataset
 def feature_label_split(data):   
-    X = data[['Gender','Age','Occupation','City_Category','Stay_In_Current_City_Years',
+    X = data[['Gender','Purchase','Occupation','City_Category','Stay_In_Current_City_Years',
               'Marital_Status','Product_Category_1','Product_Category_2','Product_Category_3']]
-    y = data['Purchase']      
+    y = data['Age']      
     return (X, y)
 
 # fit model and get accuracy and weights assigned to each feature            
@@ -33,7 +33,7 @@ def predict(X_train, y_train, X_test, y_test):
 train_set=[]
 test_set=[]
 
-kfold_split(data.df, train_set, test_set, 10)
+kfold_split(data.df[:200000], train_set, test_set, 10)
 
 scores = []
 weights = []
